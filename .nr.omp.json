@@ -2,6 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
   "version": 2,
   "final_space": true,
+  "console_title_template": "{{.Folder}}{{if .Root}} | root{{end}} - {{.Shell}}",
   "blocks": [
     {
       "type": "prompt",
@@ -10,25 +11,25 @@
         {
           "type": "root",
           "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "foreground": "#100e23",
-          "background": "#ffe9aa",
-          "template": " \uf0e7 "
+          "background": "#fa5c4f",
+          "template": " \udb86\udc53 "
         },
         {
           "type": "session",
           "style": "powerline",
-          "powerline_symbol": "\ue0b0",
+          "powerline_symbol": "",
           "foreground": "#100e23",
           "background": "#ffffff",
-          "template": " {{ .UserName }}@{{ .HostName }} "
+          "template": " {{ .UserName }} "
         },
         {
           "type": "path",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
           "foreground": "#100e23",
-          "background": "#91ddff",
+          "background": "#774aa4",
           "template": " {{ .Path }} ",
           "properties": {
             "folder_icon": "\uf115",
@@ -38,13 +39,19 @@
           }
         },
         {
-          "type": "git",
+          "type": "status",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "#193549",
-          "background": "#788cb6",
-          "template": " {{ .HEAD }} "
-        },
+          "foreground": "#ffffff",
+          "background": "#ff8080",
+          "template": " {{ reason .Code }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
         {
           "type": "python",
           "style": "powerline",
@@ -54,12 +61,14 @@
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
         },
         {
-          "type": "status",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
-          "foreground": "#ffffff",
-          "background": "#ff8080",
-          "template": " {{ reason .Code }} "
+          "type": "git",
+          "style": "diamond",
+          "leading_diamond": "\ue0b2",
+          "invert_powerline": true,
+          "trailing_diamond": "",
+          "foreground": "#193549",
+          "background": "#788cb6",
+          "template": " {{ .HEAD }} "
         }
       ]
     }
