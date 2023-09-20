@@ -132,6 +132,19 @@
           "foreground": "#434C5E",
           "background": "#EBCB8B",
           "template": "  {{ .Full }} "
+        },
+        {
+          "type": "ipify",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#c386f1",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "template": "{{ .IP }}",
+          "properties": {
+            "cache_timeout": 5,
+            "http_timeout": 1000
+          }
         }
       ]
     }
