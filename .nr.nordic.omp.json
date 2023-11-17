@@ -51,7 +51,7 @@
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#ECEFF4",
-          "background": "#88C0D0",
+          "background": "#5E81AC",
           "template": "  {{ .Full }} "
         },
         {
@@ -59,7 +59,7 @@
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#193549",
-          "background": "#EBCB8B",
+          "background": "#BF616A",
           "template": " {{ .Full }} "
         },
         {
@@ -67,7 +67,7 @@
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#2E3440",
-          "background": "#A3BE8C",
+          "background": "#6CA35E",
           "template": "  {{ .Full }} "
         }
       ]
@@ -79,11 +79,11 @@
         {
           "type": "git",
           "style": "diamond",
-          "leading_diamond": " \ue0b6",
-          "trailing_diamond": "\ue0b4",
+          "leading_diamond": "",
+          "trailing_diamond": "",
           "invert_powerline": true,
           "foreground": "#434C5E",
-          "background": "#8FBCBB",
+          "background": "#D8DEE9",
           "template": " {{ .HEAD }} "
         },
         {
@@ -105,11 +105,11 @@
         {
           "type": "sysinfo",
           "style": "diamond",
-          "leading_diamond": " \ue0b6",
-          "trailing_diamond": "\ue0b4",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
           "invert_powerline": true,
           "foreground": "#ECEFF4",
-          "background": "#B48EAD",
+          "background": "#81A1C1",
           "template": "  {{ round .PhysicalPercentUsed .Precision }}% ",
           "properties": {
             "precision": 2
@@ -118,8 +118,8 @@
         {
           "type": "ruby",
           "style": "diamond",
-          "leading_diamond": " \ue0b6",
-          "trailing_diamond": "\ue0b4",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
           "foreground": "#ECEFF4",
           "background": "#BF616A",
           "template": "  {{ .Full }} "
@@ -127,8 +127,8 @@
         {
           "type": "python",
           "style": "diamond",
-          "leading_diamond": " \ue0b6",
-          "trailing_diamond": "\ue0b4",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
           "foreground": "#434C5E",
           "background": "#EBCB8B",
           "template": "  {{ .Full }} "
@@ -137,10 +137,10 @@
           "type": "ipify",
           "style": "diamond",
           "foreground": "#ffffff",
-          "background": "#c386f1",
-          "leading_diamond": "",
-          "trailing_diamond": "",
-          "template": "{{ .IP }}",
+          "background": "#5E81AC",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "template": " 󰩟 {{ .IP }} ",
           "properties": {
             "cache_timeout": 5,
             "http_timeout": 1000
