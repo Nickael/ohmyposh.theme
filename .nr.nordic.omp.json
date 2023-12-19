@@ -35,8 +35,8 @@
           "type": "path",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "foreground": "#434C5E",
-          "background": "#D8DEE9",
+          "foreground": "#D8DEE9",
+          "background": "#434C5E",
           "template": " {{ .Path }} ",
           "properties": {
             "folder_icon": "\ue5fe",
@@ -52,22 +52,36 @@
           "foreground": "#ECEFF4",
           "background": "#ff8080",
           "template": " {{ reason .Code }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "upgrade",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "foreground": "#434C5E",
+          "background": "#EBCB8B"
         },
         {
           "type": "angular",
-          "style": "powerline",
-          "powerline_symbol": "",
+          "style": "diamond",
+          "trailing_diamond": "",
           "foreground": "#5E81AC",
-          "background": "#2E3440",
+          "background": "#434C5E",
           "template": " \ue753 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         },
         {
           "type": "node",
           "style": "diamond",
           "foreground": "#6CA35E",
-          "background": "#2E3440",
-          "leading_diamond": "\ue0b6",
-          "trailing_diamond": " ",
+          "background": "#434C5E",
+          "leading_diamond": "",
+          "trailing_diamond": "",
           "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
           "properties": {
             "fetch_package_manager": true,
@@ -92,40 +106,6 @@
           "leading_diamond": "",
           "trailing_diamond": "󰍟 ",
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} \ue0b1 {{ end }}{{ .Full }}{{ end }}"
-        }
-      ],
-      "newline": true
-    },
-    {
-      "type": "prompt",
-      "alignment": "right",
-      "segments": [
-        {
-          "type": "upgrade",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "",
-          "foreground": "#434C5E",
-          "background": "#EBCB8B"
-        },
-        {
-          "type": "git",
-          "style": "diamond",
-          "leading_diamond": "\ue0b2",
-          "foreground": "#434C5E",
-          "background": "#5E81AC",
-          "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#EBCB8B{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#6CA35E{{ end }}",
-            "{{ if gt .Ahead 0 }}#ff8080{{ end }}",
-            "{{ if gt .Behind 0 }}#ff8080{{ end }}"
-          ],
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
-          "properties": {
-            "branch_icon": "\ue725 ",
-            "fetch_status": true,
-            "fetch_upstream_icon": true
-          }
         },
         {
           "type": "os",
@@ -141,6 +121,41 @@
           }
         }
       ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "text",
+          "style": "plain",
+          "template": " "
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#5E81AC",
+          "template": "<#ffffff>[ </>{{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \u25cf {{ .Working.String }}</>{{ end }}<#ffffff> ] </>",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        },
+        {
+          "type": "status",
+          "style": "plain",
+          "foreground": "#ecf7fa",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#ef5350{{ end }} "
+          ],
+          "template": " ",
+          "properties": {
+            "always_enabled": true
+          }
+        }
+      ],
+      "newline": true
     }
   ]
 }
