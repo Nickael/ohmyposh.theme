@@ -18,8 +18,9 @@
         },
         {
           "type": "docker",
-          "style": "powerline",
-          "powerline_symbol": "",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "\ue0c6",
           "foreground": "#ECEFF4",
           "background": "#ff8080",
           "template": "  {{ .Context }} "
@@ -29,8 +30,8 @@
           "style": "diamond",
           "leading_diamond": "",
           "trailing_diamond": "\ue0c6",
-          "foreground": "#4C566A",
-          "background": "#ECEFF4",
+          "foreground": "#ECEFF4",
+          "background": "#434C5E",
           "template": " {{ .UserName }} "
         },
         {
@@ -94,7 +95,7 @@
           "style": "diamond",
           "leading_diamond": "\ue0c7",
           "trailing_diamond": "",
-          "foreground": "#434C5E",
+          "foreground": "#ECEFF4",
           "background": "#EBCB8B"
         }
       ],
@@ -113,7 +114,7 @@
           "leading_diamond": "",
           "trailing_diamond": "\ue0c6",
           "foreground": "#ECEFF4",
-          "background": "#5E81AC",
+          "background": "#434C5E",
           "template": "<#ffffff> </>{{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \udb86\udc53 {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \udb86\udc53 {{ .Working.String }}</>{{ end }}<#ffffff> </>",
           "properties": {
             "branch_icon": "\ue725 ",

@@ -17,11 +17,11 @@ notepad $PROFILE
 For Windows Powershell :
 
 ```shell
-oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/Nickael/ohmyposh.theme/master/.nr.omp.json' | Invoke-Expression
+oh-my-posh init pwsh --config 'https://raw.githubusercontent.com/Nickael/ohmyposh.theme/master/.nr.nordic.omp.json' | Invoke-Expression
 ```
 
 For Bash :
 
 ```shell
-eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/Nickael/ohmyposh.theme/master/.nr.omp.json')"
+eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/Nickael/ohmyposh.theme/master/.nr.nordic.omp.json')"
 ```
