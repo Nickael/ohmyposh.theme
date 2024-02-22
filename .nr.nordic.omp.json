@@ -50,6 +50,21 @@
           }
         },
         {
+          "type": "status",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "\ue0c6",
+          "foreground": "#ECEFF4",
+          "background": "#BF616A",
+          "template": " {{ reason .Code }} "
+        }
+      ]
+    },
+    {
+      "alignment": "right",
+      "segments": [
+
+        {
           "type": "angular",
           "style": "diamond",
           "leading_diamond": "",
@@ -71,25 +86,11 @@
           "type": "node",
           "style": "diamond",
           "leading_diamond": "",
-          "trailing_diamond": "\ue0c6",
+          "trailing_diamond": "",
           "foreground": "#2E3440",
           "background": "#A3BE8C",
           "template": "  {{ .Full }} "
         },
-        {
-          "type": "status",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "\ue0c6",
-          "foreground": "#ECEFF4",
-          "background": "#BF616A",
-          "template": " {{ reason .Code }} "
-        }
-      ]
-    },
-    {
-      "alignment": "right",
-      "segments": [
         {
           "type": "upgrade",
           "style": "diamond",
