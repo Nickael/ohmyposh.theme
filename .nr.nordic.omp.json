@@ -50,24 +50,27 @@
           }
         },
         {
-          "type": "status",
+          "background": "#2e9599",
+          "background_templates": [
+            "{{ if gt .Code 0 }}#BF616A{{ end }}"
+          ],
+          "foreground": "#D8DEE9",
+          "properties": {
+            "always_enabled": true
+          },
           "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "\ue0c6",
-          "foreground": "#ECEFF4",
-          "background": "#BF616A",
-          "template": " {{ reason .Code }} "
+          "template": " \ue23a <background,transparent>\ue0c6</>",
+          "type": "status"
         }
       ]
     },
     {
       "alignment": "right",
       "segments": [
-
         {
           "type": "angular",
           "style": "diamond",
-          "leading_diamond": "",
+          "leading_diamond": "\ue0c7",
           "trailing_diamond": "\ue0c6",
           "foreground": "#ECEFF4",
           "background": "#88C0D0",
@@ -93,11 +96,28 @@
         },
         {
           "type": "upgrade",
-          "style": "diamond",
-          "leading_diamond": "\ue0c7",
+          "style": "powerline",
+          "powerline_symbol": "\ue0c7",
+          "invert_powerline":true,
           "trailing_diamond": "",
           "foreground": "#ECEFF4",
           "background": "#EBCB8B"
+        },
+        {
+          "type": "os",
+          "style": "powerline",
+          "powerline_symbol": "\ue0c7",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "foreground": "#434C5E",
+          "background": "#ECEFF4",
+          "invert_powerline":true,
+          "template": " {{ if .WSL }}\uebca {{ end }}{{.Icon}} ",
+          "properties": {
+            "linux": "\ue712",
+            "macos": "\ue711",
+            "windows": "\ue70f"
+          }
         }
       ],
       "type": "prompt"
@@ -148,17 +168,10 @@
       "newline": true,
       "segments": [
         {
-          "type": "os",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": " \ueb2c ",
-          "foreground": "#ECEFF4",
-          "template": " {{ if .WSL }}\uebca {{ end }}{{.Icon}}",
-          "properties": {
-            "linux": "\ue712",
-            "macos": "\ue711",
-            "windows": "\ue70f"
-          }
+          "type": "text",
+          "style": "plain",
+          "foreground": "#D8DEE9",
+          "template": " \udb86\udc53 "
         }
       ],
       "type": "prompt"
