@@ -112,7 +112,7 @@
           "foreground": "#434C5E",
           "background": "#ECEFF4",
           "invert_powerline":true,
-          "template": " {{ if .WSL }}\uebca {{ end }}{{.Icon}} ",
+          "template": " {{ if .WSL }}  {{ end }}{{.Icon}} ",
           "properties": {
             "linux": "\ue712",
             "macos": "\ue711",
