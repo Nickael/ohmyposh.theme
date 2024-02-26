@@ -25,3 +25,9 @@ For Bash :
 ```shell
 eval "$(oh-my-posh init bash --config 'https://raw.githubusercontent.com/Nickael/ohmyposh.theme/master/.nr.nordic.omp.json')"
 ```
+
+For Zsh :
+
+```shell
+eval "$(oh-my-posh init zsh --config 'https://raw.githubusercontent.com/Nickael/ohmyposh.theme/master/.nr.nordic.omp.json')"
+```
