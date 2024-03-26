@@ -27,7 +27,7 @@
           "type": "session",
           "style": "diamond",
           "leading_diamond": "",
-          "trailing_diamond": "",
+          "trailing_diamond": "",
           "foreground": "#4C566A",
           "background": "#ECEFF4",
           "template": " {{ .UserName }} "
@@ -81,7 +81,7 @@
           "foreground": "#EBCB8B",
           "leading_diamond": "",
           "trailing_diamond": "",
-          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} \ue0b1 {{ end }}{{ .Full }}{{ end }} "
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}  {{ end }}{{ .Full }}{{ end }} "
         }
       ]
     },
@@ -101,7 +101,7 @@
           "type": "git",
           "style": "plain",
           "foreground": "#5E81AC",
-          "template": "<#ffffff>[ </>{{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \u25cf {{ .Working.String }}</>{{ end }}<#ffffff> ]</>",
+          "template": "{{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \u25cf {{ .Working.String }}</>{{ end }}",
           "properties": {
             "branch_icon": "\ue725 ",
             "fetch_status": true,
@@ -118,7 +118,7 @@
             "always_enabled": true
           },
           "style": "diamond",
-          "template": " \ue23a <background,transparent></>",
+          "template": "  <background,transparent></>",
           "type": "status"
         }
       ]
@@ -128,21 +128,17 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "text",
-          "style": "plain",
-          "template": " "
-        },
-        {
-          "type": "status",
-          "style": "plain",
-          "foreground": "#ecf7fa",
+          "trailing_diamond": "",
+          "foreground": "#2e9599",
           "foreground_templates": [
-            "{{ if gt .Code 0 }}#ef5350{{ end }} "
+            "{{ if gt .Code 0 }}#BF616A{{ end }}"
           ],
-          "template": " ",
           "properties": {
             "always_enabled": true
-          }
+          },
+          "style": "diamond",
+          "template": "  <background,transparent></>",
+          "type": "status"
         }
       ],
       "newline": true
