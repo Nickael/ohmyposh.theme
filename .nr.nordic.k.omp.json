@@ -101,7 +101,7 @@
           "type": "git",
           "style": "plain",
           "foreground": "#5E81AC",
-          "template": "{{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \u25cf {{ .Working.String }}</>{{ end }}",
+          "template": " {{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \u25cf {{ .Working.String }}</>{{ end }}",
           "properties": {
             "branch_icon": "\ue725 ",
             "fetch_status": true,
