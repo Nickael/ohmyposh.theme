@@ -92,8 +92,8 @@
         {
           "type": "upgrade",
           "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "",
+          "leading_diamond": " ",
+          "trailing_diamond": " ",
           "foreground": "#434C5E",
           "background": "#EBCB8B"
         },
