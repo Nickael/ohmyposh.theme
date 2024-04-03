@@ -12,8 +12,8 @@
           "style": "powerline",
           "powerline_symbol": "",
           "foreground": "#ECEFF4",
-          "background": "#D08770",
-          "template": " \udb86\udc53 "
+          "background": "#4C566A",
+          "template": " <#D08770, transparent>\udb86\udc53</>"
         },
         {
           "type": "docker",
@@ -26,24 +26,24 @@
         {
           "type": "session",
           "style": "diamond",
+          "background": "#4C566A",
+          "foreground": "#D8DEE9",
           "leading_diamond": "",
-          "trailing_diamond": "",
-          "foreground": "#4C566A",
-          "background": "#ECEFF4",
-          "template": " {{ .UserName }} "
+          "template": " {{ .UserName }} ",
+          "trailing_diamond": "<#58647A, transparent></>"
         },
         {
           "type": "path",
           "style": "diamond",
           "leading_diamond": "",
-          "trailing_diamond": "",
-          "foreground": "#D8DEE9",
-          "background": "#434C5E",
+          "trailing_diamond": "<#4C566A, transparent></>",
+          "foreground": "#ECEFF4",
+          "background": "#3B4252",
           "template": " {{ .Path }} ",
           "properties": {
             "folder_icon": "\ue5fe",
-            "folder_separator_icon": " \ue0b1 ",
-            "home_icon": "\udb80\udede",
+            "folder_separator_icon": " <#4C566A, transparent>\ue0b1</> ",
+            "home_icon": "🏠",
             "style": "agnoster"
           }
         },
