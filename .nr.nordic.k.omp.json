@@ -30,7 +30,7 @@
           "foreground": "#D8DEE9",
           "leading_diamond": "",
           "template": " {{ .UserName }} ",
-          "trailing_diamond": "<#58647A, transparent></>"
+          "trailing_diamond": "<#58647A, transparent>▌</>"
         },
         {
           "type": "path",
@@ -50,38 +50,42 @@
         {
           "type": "angular",
           "style": "diamond",
-          "trailing_diamond": "",
           "foreground": "#5E81AC",
-          "template": " \ue753 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+          "background": "#3B4252",
+          "trailing_diamond": "",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         },
         {
           "type": "node",
           "style": "diamond",
           "foreground": "#6CA35E",
+          "background": "#3B4252",
           "leading_diamond": "",
-          "trailing_diamond": "",
-          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "trailing_diamond": "<#58647A, transparent>▌</>",
+          "template": "  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
           "properties": {
             "fetch_package_manager": true,
             "npm_icon": " <#cc3a3a>\ue5fa</> ",
-            "yarn_icon": " <#348cba>\ue6a7</>"
+            "yarn_icon": " <#348cba></>"
           }
         },
         {
           "type": "ruby",
           "style": "diamond",
           "leading_diamond": "",
-          "trailing_diamond": "",
+          "trailing_diamond": "<#58647A, transparent></>",
           "foreground": "#BF616A",
-          "template": " \ue791 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+          "background": "#3B4252",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         },
         {
           "type": "python",
           "style": "diamond",
           "foreground": "#EBCB8B",
+          "background": "#3B4252",
           "leading_diamond": "",
-          "trailing_diamond": "",
-          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}  {{ end }}{{ .Full }}{{ end }} "
+          "trailing_diamond": "<#58647A, transparent></>",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         }
       ]
     },
@@ -101,25 +105,31 @@
           "type": "git",
           "style": "plain",
           "foreground": "#5E81AC",
-          "template": " {{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \u25cf {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \u25cf {{ .Working.String }}</>{{ end }}",
+          "templates": [
+            " <#58647A, #434C5E>{{ .HEAD }}</>",
+            "{{ if .Staging.Changed }} ",
+            " <#4C566A, transparent>\ue0b6</>",
+            "<#2e9599,#434C5E>",
+            "{{ if .Staging.Untracked }} 🤡 {{ .Staging.Untracked }}{{ end }}",
+            "{{ if .Staging.Added }} ➕ {{ .Staging.Added }}{{ end }}",
+            "{{ if .Staging.Deleted }} 💥 <#BF616A, transparent>{{ .Staging.Deleted }}</>{{ end }}",
+            "{{ if .Staging.Modified }} 🧪{{ .Staging.Modified }}{{ end }}",
+            " </>",
+            "<#4C566A, transparent>\ue0b4</> ",
+            "{{ end }}",
+            "{{ if .Working.Changed }}",
+            "{{ if .Working.Untracked }} 🤡 <#D8DEE9, transparent>{{ .Working.Untracked }}</>{{ end }}",
+            "{{ if .Working.Added }} ➕ <#5E81AC, transparent>{{ .Working.Added }}</>{{ end }}",
+            "{{ if .Working.Deleted }} 💥 <#BF616A, transparent>{{ .Working.Deleted }}</>{{ end }}",
+            "{{ if .Working.Modified }} 🧪<#2e9599, transparent>{{ .Working.Modified }}</>{{ end }}",
+            "{{ if gt .StashCount 0 }} 💾 <#D8DEE9, transparent>{{ .StashCount }}</>{{ end }}",
+            " {{ end }}"
+          ],
           "properties": {
-            "branch_icon": "\ue725 ",
+            "branch_icon": "🌲",
             "fetch_status": true,
             "fetch_upstream_icon": true
           }
-        },
-        {
-          "trailing_diamond": "",
-          "foreground": "#2e9599",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#BF616A{{ end }}"
-          ],
-          "properties": {
-            "always_enabled": true
-          },
-          "style": "diamond",
-          "template": "  <background,transparent></>",
-          "type": "status"
         }
       ]
     },
@@ -137,7 +147,7 @@
             "always_enabled": true
           },
           "style": "diamond",
-          "template": "  <background,transparent></>",
+          "template": "  <background, transparent></>",
           "type": "status"
         }
       ],
