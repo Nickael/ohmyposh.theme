@@ -22,7 +22,7 @@
           "foreground": "#D8DEE9",
           "leading_diamond": "",
           "templates": [
-            "{{ if .Root }}<#D08770, transparent> \udb86\udc53 </>{{ end }}",
+            "{{ if .Root }}<#D08770,#3B4252> \udb86\udc53 </>{{ end }}",
             "{{ if .SSHSession }} 👾{{ end }}",
             " {{ .UserName }} "
           ],
