@@ -8,14 +8,6 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "root",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "#ECEFF4",
-          "background": "#4C566A",
-          "template": " <#D08770, transparent>\udb86\udc53</>"
-        },
-        {
           "type": "docker",
           "style": "powerline",
           "powerline_symbol": "",
@@ -29,7 +21,11 @@
           "background": "#4C566A",
           "foreground": "#D8DEE9",
           "leading_diamond": "",
-          "template": " {{ .UserName }} ",
+          "templates": [
+            "{{ if .Root }}<#D08770, transparent> \udb86\udc53 </>{{ end }}",
+            "{{ if .SSHSession }} {{ end }}",
+            " {{ .UserName }} "
+          ],
           "trailing_diamond": "<#58647A, transparent>▌</>"
         },
         {
@@ -44,8 +40,20 @@
             "folder_icon": "\ue5fe",
             "folder_separator_icon": " <#4C566A, transparent>\ue0b1</> ",
             "home_icon": "🏠",
-            "style": "agnoster"
+            "style": "mixed",
+            "mapped_locations": {
+              "/home/nr/Workspaces/_analyst": "🇦",
+              "/home/nr/Workspaces/_client": "🇨"
+            }
           }
+        },
+        {
+          "type": "nx",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#3B4252",
+          "background": "#5E81AC",
+          "template": "  {{ .Full }} "
         },
         {
           "type": "angular",
