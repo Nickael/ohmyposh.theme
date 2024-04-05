@@ -23,7 +23,7 @@
           "leading_diamond": "",
           "templates": [
             "{{ if .Root }}<#D08770, transparent> \udb86\udc53 </>{{ end }}",
-            "{{ if .SSHSession }} {{ end }}",
+            "{{ if .SSHSession }} 👨🏿‍💻 {{ end }}",
             " {{ .UserName }} "
           ],
           "trailing_diamond": "<#58647A, transparent>▌</>"
