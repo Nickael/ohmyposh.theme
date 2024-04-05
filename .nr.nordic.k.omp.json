@@ -26,7 +26,7 @@
             "{{ if .SSHSession }} 👾{{ end }}",
             " {{ .UserName }} "
           ],
-          "trailing_diamond": "<#58647A, transparent>▌</>"
+          "trailing_diamond": "<#5E81AC, transparent>▒</>"
         },
         {
           "type": "path",
@@ -69,7 +69,7 @@
           "foreground": "#6CA35E",
           "background": "#3B4252",
           "leading_diamond": "",
-          "trailing_diamond": "<#58647A, transparent>▌</>",
+          "trailing_diamond": "<#58647A, transparent>▒</>",
           "template": "  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
           "properties": {
             "fetch_package_manager": true,
@@ -114,23 +114,21 @@
           "style": "plain",
           "foreground": "#5E81AC",
           "templates": [
-            " <#58647A, #434C5E>{{ .HEAD }}</>",
-            "{{ if .Staging.Changed }} ",
-            " <#4C566A, transparent>\ue0b6</>",
-            "<#2e9599,#434C5E>",
-            "{{ if .Staging.Untracked }} 🤡 {{ .Staging.Untracked }}{{ end }}",
-            "{{ if .Staging.Added }} ➕ {{ .Staging.Added }}{{ end }}",
-            "{{ if .Staging.Deleted }} 💥 <#BF616A, transparent>{{ .Staging.Deleted }}</>{{ end }}",
-            "{{ if .Staging.Modified }} 🧪{{ .Staging.Modified }}{{ end }}",
-            " </>",
-            "<#4C566A, transparent>\ue0b4</> ",
+            " <#58647A,transparent>{{ .HEAD }}</> ",
+            "{{ if .Staging.Changed }}",
+            "<#2e9599,#A3BE8C>",
+            "{{ if .Staging.Untracked }} ? {{ .Staging.Untracked }}{{ end }}",
+            "{{ if .Staging.Added }} + {{ .Staging.Added }}{{ end }}",
+            "{{ if .Staging.Deleted }} - <#BF616A, transparent>{{ .Staging.Deleted }}</>{{ end }}",
+            "{{ if .Staging.Modified }} ~ {{ .Staging.Modified }} {{ end }}",
+            "</>",
             "{{ end }}",
             "{{ if .Working.Changed }}",
-            "{{ if .Working.Untracked }} 🤡 <#D8DEE9, transparent>{{ .Working.Untracked }}</>{{ end }}",
-            "{{ if .Working.Added }} ➕ <#5E81AC, transparent>{{ .Working.Added }}</>{{ end }}",
-            "{{ if .Working.Deleted }} 💥 <#BF616A, transparent>{{ .Working.Deleted }}</>{{ end }}",
-            "{{ if .Working.Modified }} 🧪<#2e9599, transparent>{{ .Working.Modified }}</>{{ end }}",
-            "{{ if gt .StashCount 0 }} 💾 <#D8DEE9, transparent>{{ .StashCount }}</>{{ end }}",
+            "{{ if .Working.Untracked }} ? <#D8DEE9, transparent>{{ .Working.Untracked }}</>{{ end }}",
+            "{{ if .Working.Added }} + <#5E81AC, transparent>{{ .Working.Added }}</>{{ end }}",
+            "{{ if .Working.Deleted }} - <#BF616A, transparent>{{ .Working.Deleted }}</>{{ end }}",
+            "{{ if .Working.Modified }} ~ <#2e9599, transparent>{{ .Working.Modified }}</>{{ end }}",
+            "{{ if gt .StashCount 0 }} ⌘ <#D8DEE9, transparent>{{ .StashCount }}</>{{ end }}",
             " {{ end }}"
           ],
           "properties": {
