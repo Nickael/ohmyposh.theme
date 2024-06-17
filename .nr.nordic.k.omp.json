@@ -103,33 +103,15 @@
       "segments": [
         {
           "type": "upgrade",
-          "style": "diamond",
-          "leading_diamond": " ",
-          "trailing_diamond": " ",
-          "foreground": "#434C5E",
-          "background": "#EBCB8B"
+          "style": "plain",
+          "template": " [ <#58647A,transparent>{{.Current}}</> -> <#A3BE8C,transparent>{{.Latest}}</> ] "
         },
         {
           "type": "git",
           "style": "plain",
           "foreground": "#5E81AC",
           "templates": [
-            " <#58647A,transparent>{{ .HEAD }}</> ",
-            "{{ if .Staging.Changed }}",
-            "<#2e9599,#A3BE8C>",
-            "{{ if .Staging.Untracked }} ? {{ .Staging.Untracked }}{{ end }}",
-            "{{ if .Staging.Added }} + {{ .Staging.Added }}{{ end }}",
-            "{{ if .Staging.Deleted }} - <#BF616A, transparent>{{ .Staging.Deleted }}</>{{ end }}",
-            "{{ if .Staging.Modified }} ~ {{ .Staging.Modified }} {{ end }}",
-            "</>",
-            "{{ end }}",
-            "{{ if .Working.Changed }}",
-            "{{ if .Working.Untracked }} ? <#D8DEE9, transparent>{{ .Working.Untracked }}</>{{ end }}",
-            "{{ if .Working.Added }} + <#5E81AC, transparent>{{ .Working.Added }}</>{{ end }}",
-            "{{ if .Working.Deleted }} - <#BF616A, transparent>{{ .Working.Deleted }}</>{{ end }}",
-            "{{ if .Working.Modified }} ~ <#2e9599, transparent>{{ .Working.Modified }}</>{{ end }}",
-            "{{ if gt .StashCount 0 }} ⌘ <#D8DEE9, transparent>{{ .StashCount }}</>{{ end }}",
-            " {{ end }}"
+            " [ <#2e9599,transparent>{{ .HEAD }}</> ] "
           ],
           "properties": {
             "branch_icon": "🌲",
