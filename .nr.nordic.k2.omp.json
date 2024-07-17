@@ -1,0 +1,144 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "console_title_template": "{{.Folder}}{{if .Root}} | root{{end}} - {{.Shell}}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "docker",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ECEFF4",
+          "background": "#ff8080",
+          "template": "  {{ .Context }} "
+        },
+        {
+          "type": "session",
+          "style": "diamond",
+          "background": "#4C566A",
+          "foreground": "#D8DEE9",
+          "leading_diamond": "",
+          "templates": [
+            "{{ if .Root }}<#D08770,#3B4252> \udb86\udc53 </>{{ end }}",
+            "{{ if .SSHSession }} 👾{{ end }}",
+            " {{ .UserName }} "
+          ],
+          "trailing_diamond": "<#5E81AC, transparent>▒</>"
+        },
+        {
+          "type": "path",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "<#4C566A, transparent></>",
+          "foreground": "#ECEFF4",
+          "background": "#3B4252",
+          "template": " {{ .Path }} ",
+          "properties": {
+            "folder_icon": "\ue5fe",
+            "folder_separator_icon": " <#4C566A, transparent>\ue0b1</> ",
+            "home_icon": "🏠",
+            "style": "mixed",
+            "mapped_locations": {
+              "/home/nr/Workspaces": "👾"
+            }
+          }
+        },
+        {
+          "type": "nx",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#3B4252",
+          "background": "#5E81AC",
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "angular",
+          "style": "diamond",
+          "foreground": "#5E81AC",
+          "background": "#3B4252",
+          "trailing_diamond": "",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "node",
+          "style": "diamond",
+          "foreground": "#6CA35E",
+          "background": "#3B4252",
+          "leading_diamond": "",
+          "trailing_diamond": "<#58647A, transparent>▒</>",
+          "template": "  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "properties": {
+            "fetch_package_manager": true,
+            "npm_icon": " <#cc3a3a>\ue5fa</> ",
+            "yarn_icon": " <#348cba></>"
+          }
+        },
+        {
+          "type": "ruby",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "<#58647A, transparent></>",
+          "foreground": "#BF616A",
+          "background": "#3B4252",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "foreground": "#EBCB8B",
+          "background": "#3B4252",
+          "leading_diamond": "",
+          "trailing_diamond": "<#58647A, transparent></>",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "upgrade",
+          "style": "plain",
+          "template": " [ <#58647A,transparent>{{.Current}}</> -> <#A3BE8C,transparent>{{.Latest}}</> ] "
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#5E81AC",
+          "templates": [
+            " [ <#2e9599,transparent>{{ .HEAD }}</> ] "
+          ],
+          "properties": {
+            "branch_icon": "🌲 ",
+            "fetch_status": true,
+            "fetch_upstream_icon": true
+          }
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "trailing_diamond": "",
+          "foreground": "#2e9599",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#BF616A{{ end }}"
+          ],
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "diamond",
+          "template": "  <background, transparent></>",
+          "type": "status"
+        }
+      ],
+      "newline": true
+    }
+  ]
+}
