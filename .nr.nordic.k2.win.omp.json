@@ -8,14 +8,6 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "docker",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "#ECEFF4",
-          "background": "#ff8080",
-          "template": "  {{ .Context }} "
-        },
-        {
           "type": "session",
           "style": "diamond",
           "background": "#4C566A",
@@ -121,6 +113,13 @@
             "npm_icon": " <#cc3a3a>\ue5fa</> ",
             "yarn_icon": " <#348cba></>"
           }
+        },
+        {
+          "type": "docker",
+          "style": "diamond",
+          "powerline_symbol": "",
+          "foreground": "#348cba",
+          "template": "  {{ .Context }} "
         }
       ],
       "newline": true
