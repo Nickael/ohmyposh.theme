@@ -66,6 +66,37 @@
           "type": "upgrade",
           "style": "plain",
           "template": " [ <#58647A,transparent>{{.Current}}</> -> <#A3BE8C,transparent>{{.Latest}}</> ] "
+        },
+        {
+          "type": "git",
+          "style": "plain",
+          "foreground": "#5E81AC",
+          "templates": [
+            "{{ if .Staging.Changed }}",
+            "{{if .Staging.Added }} ⬆️ 🇦 {{ .Staging.Added }}{{ end }}",
+            "{{if .Staging.Deleted }} ⬆️ 🇩 {{ .Staging.Deleted }}{{ end }}",
+            "{{if .Staging.Modified }} ⬆️ 🇲 {{ .Staging.Modified }}{{ end }}",
+            "{{if .Staging.Untracked }} ⬆️ 🇺 {{ .Staging.Untracked }}{{ end }}",
+            "{{ end }}",
+            "{{ if .Working.Changed }}",
+            "{{if .Working.Added }} ➡️ 🇦 {{ .Working.Added }}{{ end }}",
+            "{{if .Working.Deleted }} ➡️ 🇩 {{ .Working.Deleted }}{{ end }}",
+            "{{if .Working.Modified }} ➡️ 🇲 {{ .Working.Modified }}{{ end }}",
+            "{{if .Working.Untracked }} ➡️ 🇺 {{ .Working.Untracked }}{{ end }}",
+            "{{ end }}"
+          ],
+          "properties": {
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "untracked_modes": {
+              "/Users/user/Projects/oh-my-posh/": "no"
+            },
+            "source": "cli",
+            "mapped_branches": {
+              "feat/*": "🚀 ",
+              "bug/*": "🐛 "
+            }
+          }
         }
       ]
     },
@@ -73,6 +104,16 @@
       "type": "prompt",
       "alignment": "left",
       "segments": [
+        {
+          "type": "shell",
+          "style": "diamond",
+          "foreground": "#ef5350",
+          "properties": {
+            "mapped_shell_names": {
+              "pwsh": "PS"
+            }
+          }
+        },
         {
           "type": "git",
           "style": "plain",
