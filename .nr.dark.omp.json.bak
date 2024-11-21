@@ -1,0 +1,151 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "version": 2,
+  "final_space": true,
+  "console_title_template": "{{.Folder}}{{if .Root}} | root{{end}} - {{.Shell}}",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "type": "root",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#100e23",
+          "background": "#fa5c4f",
+          "template": " \udb86\udc53 "
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#100e23",
+          "background": "#ffffff",
+          "template": " {{ .UserName }} "
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#ffffff",
+          "background": "#774aa4",
+          "template": " {{ .Path }} ",
+          "properties": {
+            "folder_icon": "\uf115",
+            "folder_separator_icon": " \ue0b1 ",
+            "home_icon": "\ueb06",
+            "style": "agnoster"
+          }
+        },
+        {
+          "type": "status",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#ffffff",
+          "background": "#ff8080",
+          "template": " {{ reason .Code }} "
+        },
+        {
+          "type": "angular",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#1976d2",
+          "template": "  {{ .Full }} "
+        },
+        {
+          "type": "npm",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#193549",
+          "background": "#ffeb3b",
+          "template": " {{ .Full }} "
+        },
+        {
+          "type": "node",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "foreground": "#ffffff",
+          "background": "#6CA35E",
+          "template": "  {{ .Full }} "
+        }
+      ]
+    },
+    {
+      "type": "prompt",
+      "alignment": "right",
+      "segments": [
+        {
+          "type": "git",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
+          "foreground": "#ffffff",
+          "background": "#788cb6",
+          "template": " {{ .HEAD }} "
+        },
+        {
+          "type": "docker",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
+          "foreground": "#ffffff",
+          "background": "#0B59E7",
+          "template": "  {{ .Context }} "
+        },
+        {
+          "type": "upgrade",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
+          "foreground": "#111111",
+          "background": "#FFD664"
+        },
+        {
+          "type": "sysinfo",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
+          "foreground": "#ffffff",
+          "background": "#8f43f3",
+          "template": "  {{ round .PhysicalPercentUsed .Precision }}% ",
+          "properties": {
+            "precision": 2
+          }
+        },
+        {
+          "type": "ruby",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
+          "foreground": "#ffffff",
+          "background": "#fd5c63",
+          "template": "  {{ .Full }}"
+        },
+        {
+          "type": "python",
+          "style": "diamond",
+          "leading_diamond": "",
+          "trailing_diamond": "󰍟",
+          "foreground": "#434C5E",
+          "background": "#FFD664",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+        },
+        {
+          "type": "ipify",
+          "style": "diamond",
+          "foreground": "#ffffff",
+          "background": "#c386f1",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "template": " {{ .IP }} ",
+          "properties": {
+            "cache_timeout": 5,
+            "http_timeout": 1000
+          }
+        }
+      ]
+    }
+  ]
+}

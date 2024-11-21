@@ -1,7 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
-  "final_space": true,
   "console_title_template": "{{.Folder}}{{if .Root}} | root{{end}} - {{.Shell}}",
   "blocks": [
     {
@@ -9,66 +7,83 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "root",
-          "style": "powerline",
-          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " \udb86\udc53 ",
           "foreground": "#100e23",
           "background": "#fa5c4f",
-          "template": " \udb86\udc53 "
+          "type": "root",
+          "style": "powerline"
         },
         {
-          "type": "session",
-          "style": "powerline",
-          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " {{ .UserName }} ",
           "foreground": "#100e23",
           "background": "#ffffff",
-          "template": " {{ .UserName }} "
+          "type": "session",
+          "style": "powerline"
         },
         {
-          "type": "path",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
-          "foreground": "#ffffff",
-          "background": "#774aa4",
-          "template": " {{ .Path }} ",
           "properties": {
+            "cache_duration": "none",
             "folder_icon": "\uf115",
             "folder_separator_icon": " \ue0b1 ",
             "home_icon": "\ueb06",
             "style": "agnoster"
-          }
-        },
-        {
-          "type": "status",
-          "style": "powerline",
+          },
+          "template": " {{ .Path }} ",
+          "foreground": "#ffffff",
           "powerline_symbol": "\ue0b0",
+          "background": "#774aa4",
+          "type": "path",
+          "style": "powerline"
+        },
+        {
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " {{ reason .Code }} ",
           "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
           "background": "#ff8080",
-          "template": " {{ reason .Code }} "
+          "type": "status",
+          "style": "powerline"
         },
         {
-          "type": "angular",
-          "style": "powerline",
-          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " \ue753 {{ .Full }} ",
           "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
           "background": "#1976d2",
-          "template": "  {{ .Full }} "
+          "type": "angular",
+          "style": "powerline"
         },
         {
-          "type": "npm",
-          "style": "powerline",
-          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\ue71e {{ .Full }} ",
           "foreground": "#193549",
+          "powerline_symbol": "\ue0b0",
           "background": "#ffeb3b",
-          "template": " {{ .Full }} "
+          "type": "npm",
+          "style": "powerline"
         },
         {
-          "type": "node",
-          "style": "powerline",
-          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " \ue718 {{ .Full }} ",
           "foreground": "#ffffff",
+          "powerline_symbol": "\ue0b0",
           "background": "#6CA35E",
-          "template": "  {{ .Full }} "
+          "type": "node",
+          "style": "powerline"
         }
       ]
     },
@@ -77,75 +92,89 @@
       "alignment": "right",
       "segments": [
         {
-          "type": "git",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "󰍟",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "trailing_diamond": "\udb80\udf5f",
+          "template": " {{ .HEAD }} ",
           "foreground": "#ffffff",
           "background": "#788cb6",
-          "template": " {{ .HEAD }} "
+          "type": "git",
+          "style": "diamond"
         },
         {
-          "type": "docker",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "󰍟",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "trailing_diamond": "\udb80\udf5f",
+          "template": " \uf308 {{ .Context }} ",
           "foreground": "#ffffff",
           "background": "#0B59E7",
-          "template": "  {{ .Context }} "
+          "type": "docker",
+          "style": "diamond"
         },
         {
-          "type": "upgrade",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "󰍟",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "trailing_diamond": "\udb80\udf5f",
           "foreground": "#111111",
-          "background": "#FFD664"
+          "background": "#FFD664",
+          "type": "upgrade",
+          "style": "diamond"
         },
         {
-          "type": "sysinfo",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "󰍟",
+          "properties": {
+            "cache_duration": "none",
+            "precision": 2
+          },
+          "trailing_diamond": "\udb80\udf5f",
+          "template": " \ue266 {{ round .PhysicalPercentUsed .Precision }}% ",
           "foreground": "#ffffff",
           "background": "#8f43f3",
-          "template": "  {{ round .PhysicalPercentUsed .Precision }}% ",
-          "properties": {
-            "precision": 2
-          }
+          "type": "sysinfo",
+          "style": "diamond"
         },
         {
-          "type": "ruby",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "󰍟",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "trailing_diamond": "\udb80\udf5f",
+          "template": " \ue791 {{ .Full }}",
           "foreground": "#ffffff",
           "background": "#fd5c63",
-          "template": "  {{ .Full }}"
+          "type": "ruby",
+          "style": "diamond"
         },
         {
-          "type": "python",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "󰍟",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "trailing_diamond": "\udb80\udf5f",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
           "foreground": "#434C5E",
           "background": "#FFD664",
-          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+          "type": "python",
+          "style": "diamond"
         },
         {
-          "type": "ipify",
-          "style": "diamond",
+          "properties": {
+            "cache_duration": "none",
+            "http_timeout": 1000
+          },
+          "cache": {
+            "duration": "5m0s",
+            "strategy": "folder"
+          },
+          "template": " {{ .IP }} ",
           "foreground": "#ffffff",
           "background": "#c386f1",
-          "leading_diamond": "",
-          "trailing_diamond": "",
-          "template": " {{ .IP }} ",
-          "properties": {
-            "cache_timeout": 5,
-            "http_timeout": 1000
-          }
+          "type": "ipify",
+          "style": "diamond"
         }
       ]
     }
-  ]
+  ],
+  "version": 3,
+  "final_space": true
 }

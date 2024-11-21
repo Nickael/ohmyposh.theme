@@ -1,6 +1,5 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
   "console_title_template": "{{.Folder}}{{if .Root}} | root{{end}} - {{.Shell}}",
   "blocks": [
     {
@@ -8,53 +7,49 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "session",
           "style": "diamond",
-          "background": "#4C566A",
+          "trailing_diamond": "<#5E81AC, transparent>\u2592</>",
           "foreground": "#D8DEE9",
-          "leading_diamond": "",
+          "background": "#4C566A",
+          "type": "session",
           "templates": [
             "{{ if .Root }}<#D08770,#3B4252> \udb86\udc53 </>{{ end }}",
             "{{ if .SSHSession }} 👾{{ end }}",
             " {{ .UserName }} "
-          ],
-          "trailing_diamond": "<#5E81AC, transparent>▒</>"
+          ]
         },
         {
-          "type": "path",
-          "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "<#4C566A, transparent></>",
-          "foreground": "#ECEFF4",
-          "background": "#3B4252",
-          "template": " {{ .Path }} ",
           "properties": {
             "folder_icon": "\ue5fe",
             "folder_separator_icon": " <#4C566A, transparent>\ue0b1</> ",
             "home_icon": "🏠",
-            "style": "mixed",
             "mapped_locations": {
               "/home/nr/Workspaces": "👾"
-            }
-          }
+            },
+            "style": "mixed"
+          },
+          "style": "diamond",
+          "trailing_diamond": "<#4C566A, transparent>\ue0b0</>",
+          "template": " {{ .Path }} ",
+          "foreground": "#ECEFF4",
+          "background": "#3B4252",
+          "type": "path"
         },
         {
-          "type": "ruby",
           "style": "diamond",
-          "leading_diamond": "",
-          "trailing_diamond": "<#58647A, transparent></>",
+          "trailing_diamond": "<#58647A, transparent>\ue0b0</>",
+          "template": " \ue791 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
           "foreground": "#BF616A",
           "background": "#3B4252",
-          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+          "type": "ruby"
         },
         {
-          "type": "python",
           "style": "diamond",
+          "trailing_diamond": "<#58647A, transparent>\ue0b0</>",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
           "foreground": "#EBCB8B",
           "background": "#3B4252",
-          "leading_diamond": "",
-          "trailing_diamond": "<#58647A, transparent></>",
-          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+          "type": "python"
         }
       ]
     },
@@ -63,40 +58,25 @@
       "alignment": "right",
       "segments": [
         {
-          "type": "upgrade",
           "style": "plain",
-          "template": " [ <#58647A,transparent>{{.Current}}</> -> <#A3BE8C,transparent>{{.Latest}}</> ] "
+          "template": " [ <#58647A,transparent>{{.Current}}</> -> <#A3BE8C,transparent>{{.Latest}}</> ] ",
+          "foreground": "",
+          "background": "",
+          "type": "upgrade"
         },
         {
-          "type": "git",
-          "style": "plain",
-          "foreground": "#5E81AC",
-          "templates": [
-            "{{ if .Staging.Changed }}",
-            "{{if .Staging.Added }} ⬆️ 🇦 {{ .Staging.Added }}{{ end }}",
-            "{{if .Staging.Deleted }} ⬆️ 🇩 {{ .Staging.Deleted }}{{ end }}",
-            "{{if .Staging.Modified }} ⬆️ 🇲 {{ .Staging.Modified }}{{ end }}",
-            "{{if .Staging.Untracked }} ⬆️ 🇺 {{ .Staging.Untracked }}{{ end }}",
-            "{{ end }}",
-            "{{ if .Working.Changed }}",
-            "{{if .Working.Added }} ➡️ 🇦 {{ .Working.Added }}{{ end }}",
-            "{{if .Working.Deleted }} ➡️ 🇩 {{ .Working.Deleted }}{{ end }}",
-            "{{if .Working.Modified }} ➡️ 🇲 {{ .Working.Modified }}{{ end }}",
-            "{{if .Working.Untracked }} ➡️ 🇺 {{ .Working.Untracked }}{{ end }}",
-            "{{ end }}"
-          ],
           "properties": {
+            "branch_icon": "\ue725 ",
+            "cache_duration": "none",
             "fetch_status": true,
-            "fetch_upstream_icon": true,
-            "untracked_modes": {
-              "/Users/user/Projects/oh-my-posh/": "no"
-            },
-            "source": "cli",
-            "mapped_branches": {
-              "feat/*": "🚀 ",
-              "bug/*": "🐛 "
-            }
-          }
+            "fetch_upstream_icon": true
+          },
+          "trailing_diamond": "",
+          "template": "<#ffffff> </>{{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \udb86\udc53 {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \udb86\udc53 {{ .Working.String }}</>{{ end }}<#ffffff> </>",
+          "foreground": "#ECEFF4",
+          "background": "",
+          "type": "git",
+          "style": "diamond"
         }
       ]
     },
@@ -105,62 +85,63 @@
       "alignment": "left",
       "segments": [
         {
-          "type": "shell",
-          "style": "diamond",
-          "foreground": "#ef5350",
           "properties": {
             "mapped_shell_names": {
               "pwsh": "PS"
             }
-          }
+          },
+          "style": "diamond",
+          "foreground": "#ef5350",
+          "background": "",
+          "type": "shell"
         },
         {
-          "type": "git",
-          "style": "plain",
-          "foreground": "#5E81AC",
-          "templates": [
-            "<#2e9599,transparent>{{ .HEAD }}</>"
-          ],
           "properties": {
             "branch_icon": "🌲 ",
             "fetch_status": true,
             "fetch_upstream_icon": true
-          }
-        },
-        {
-          "type": "nx",
-          "style": "powerline",
-          "powerline_symbol": "",
-          "foreground": "#3B4252",
-          "background": "#5E81AC",
-          "template": "  {{ .Full }} "
-        },
-        {
-          "type": "angular",
-          "style": "diamond",
+          },
+          "style": "plain",
           "foreground": "#5E81AC",
-          "trailing_diamond": "",
-          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
+          "background": "",
+          "type": "git",
+          "templates": [
+            "<#2e9599,transparent>{{ .HEAD }}</>"
+          ]
         },
         {
-          "type": "node",
+          "style": "powerline",
+          "template": " \ue753 {{ .Full }} ",
+          "foreground": "#3B4252",
+          "powerline_symbol": "\ue0b0",
+          "background": "#5E81AC",
+          "type": "nx"
+        },
+        {
           "style": "diamond",
-          "foreground": "#6CA35E",
-          "leading_diamond": "",
-          "trailing_diamond": "",
-          "template": "  {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "template": " \ue753 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} ",
+          "foreground": "#5E81AC",
+          "background": "",
+          "type": "angular"
+        },
+        {
           "properties": {
             "fetch_package_manager": true,
             "npm_icon": " <#cc3a3a>\ue5fa</> ",
-            "yarn_icon": " <#348cba></>"
-          }
+            "yarn_icon": " <#348cba>\ue6a7</>"
+          },
+          "style": "diamond",
+          "template": " \ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "foreground": "#6CA35E",
+          "background": "",
+          "type": "node"
         },
         {
-          "type": "docker",
           "style": "diamond",
-          "powerline_symbol": "",
+          "template": " \uf308 {{ .Context }} ",
           "foreground": "#348cba",
-          "template": "  {{ .Context }} "
+          "background": "",
+          "type": "docker"
         }
       ],
       "newline": true
@@ -170,20 +151,21 @@
       "alignment": "left",
       "segments": [
         {
-          "trailing_diamond": "",
-          "foreground": "#2e9599",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#BF616A{{ end }}"
-          ],
           "properties": {
             "always_enabled": true
           },
           "style": "diamond",
-          "template": "  <background, transparent></>",
-          "type": "status"
+          "template": " \ueb2c <background, transparent></>",
+          "foreground": "#2e9599",
+          "background": "",
+          "type": "status",
+          "foreground_templates": [
+            "{{ if gt .Code 0 }}#BF616A{{ end }}"
+          ]
         }
       ],
       "newline": true
     }
-  ]
+  ],
+  "version": 3
 }
