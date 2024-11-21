@@ -72,7 +72,7 @@
             "fetch_upstream_icon": true
           },
           "trailing_diamond": "",
-          "template": "<#ffffff> </>{{ .HEAD }}{{ if .Staging.Changed }}<#6CA35E> \udb86\udc53 {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \udb86\udc53 {{ .Working.String }}</>{{ end }}<#ffffff> </>",
+          "template": "<#ffffff> </>{{ if .Staging.Changed }}<#6CA35E> \udb86\udc53 {{ .Staging.String }}</>{{ end }}{{ if .Working.Changed }}<#ff8080> \udb86\udc53 {{ .Working.String }}</>{{ end }}<#ffffff> </>",
           "foreground": "#ECEFF4",
           "background": "",
           "type": "git",
