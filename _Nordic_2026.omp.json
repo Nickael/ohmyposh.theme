@@ -18,6 +18,8 @@
     "nord13": "#EBCB8B",
     "nord14": "#A3BE8C",
     "nord15": "#B48EAD",
+    "purpule": "#5654a4",
+    "green": "#4dc47d",
     "teal": "#2e9599",
     "docker_blue": "#348cba",
     "npm_red": "#cc3a3a"
@@ -31,7 +33,7 @@
         {
           "type": "session",
           "style": "diamond",
-          "trailing_diamond": "<p:nord10,transparent>\u2592</>",
+          "trailing_diamond": "<p:green,p:purpule>\u2592</>",
           "foreground": "p:nord4",
           "background": "p:nord3",
           "templates": [
@@ -43,7 +45,7 @@
         {
           "type": "path",
           "style": "diamond",
-          "trailing_diamond": "<p:nord1,transparent>\ue0b0</>",
+          "trailing_diamond": "<p:green,transparent>\ue0b0</>",
           "foreground": "p:nord6",
           "background": "p:nord1",
           "template": " {{ .Path }} ",
