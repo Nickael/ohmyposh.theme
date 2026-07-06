@@ -85,7 +85,7 @@
         {
           "type": "upgrade",
           "style": "plain",
-          "template": " [ <#58647A,transparent>{{.Current}}</> -> <p:nord14,transparent>{{.Latest}}</} ] "
+          "template": " [ <#58647A,transparent>{{.Current}}</> -> <p:nord14,transparent>{{.Latest}}</> ] "
         },
         {
           "type": "git",
